@@ -14,12 +14,14 @@ router.post('/', (req, res) => {
 		.then((movie) => res.json(movie))
 		.catch(console.error);
 });
+
 router.get('/:id/rating', async (req, res) => {
 	const movieRatings = await Movie.findById(req.params.id).populate(
 		'ratings'
 	);
 	res.json(movieRatings.ratings);
 });
+
 router.post('/:id/rating', (req, res) => {
 	Rating.create(req.body).then((rating) => {
 		Movie.findById(req.params.id).then((movie) => {
@@ -29,8 +31,20 @@ router.post('/:id/rating', (req, res) => {
 		});
 	});
 });
-router.get('/:id', (req, res) => {
-	Movie.findById(req.params.id)
+
+router.get('/:id', async (req, res) => {
+	const movieRatings = await Movie.findById(req.params.id).populate(
+		'ratings'
+	);
+	const reducer = (a, c) => a + c.rating;
+	const length = movieRatings.ratings.length;
+	const sum = movieRatings.ratings.reduce(reducer, 0);
+	const average = length > 0 ? sum / length : 0;
+	Movie.findByIdAndUpdate(
+		req.params.id,
+		{ avgRating: average.toFixed(2) },
+		{ new: true }
+	)
 		.then((movie) => res.json(movie))
 		.catch(console.error);
 });

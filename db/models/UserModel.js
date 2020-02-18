@@ -12,8 +12,7 @@ const UserSchema = new mongoose.Schema({
 	password: {
 		type: String,
 		required: true,
-		minlength: 6,
-		maxlength: 20
+		minlength: 6
 	},
 	movies: {
 		type: mongoose.Schema.Types.ObjectId,
