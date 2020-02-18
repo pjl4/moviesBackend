@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require('../db/models/MovieModel');
+const User = require('../db/models/UserModel');
 const Rating = require('../db/models/RatingsModel');
 
 router.get('/', (req, res) => {
@@ -38,6 +39,7 @@ router.post('/:id/rating', (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const movieRatings = await Movie.findById(req.params.id).populate('ratings');
+
   const reducer = (a, c) => a + c.rating;
   const length = movieRatings.ratings.length;
   const sum = movieRatings.ratings.reduce(reducer, 0);
@@ -47,7 +49,17 @@ router.get('/:id', async (req, res) => {
     { avgRating: average.toFixed(2) },
     { new: true }
   )
-    .then(movie => res.json(movie))
+    .then(movie => {
+      User.findById(movie.createdBy).then(user => {
+        const movieObj = {
+          userName: user.userName,
+          _id: user._id,
+          movie: movie
+        };
+        res.json(movieObj);
+      });
+    })
+
     .catch(console.error);
 });
 router.put('/:id', (req, res) => {
