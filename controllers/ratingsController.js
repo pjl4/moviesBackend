@@ -4,7 +4,7 @@ const Rating = require('../db/models/RatingsModel');
 const Movie = require('../db/models/MovieModel');
 
 router.put('/:id', (req, res) => {
-	Rating.findByIdAndUpdate(req.params.id, req.body)
+	Rating.findByIdAndUpdate(req.params.id, req.body, { new: true })
 		.then((rating) => res.json(rating))
 		.catch((err) => console.log(err));
 });
