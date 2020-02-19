@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
         const movieObj = {
           userName: user.userName,
           _id: user._id,
-          movie: movie
+          movie: movieRatings
         };
         res.json(movieObj);
       });
