@@ -11,7 +11,7 @@ The cinopsis movie web application created by Mindy Marmol, Peter Lutz, Ryan Zim
 
 ## Technologies Used:
 
-The technologies used for cinopsis is React Javascript. The dependencies installed in this app are: Chai, Mocha, Bcryptjs, Cors, Express, Mongoose, Nodemon and Supertest. Bcryptjs is used for login password authentication.
+The dependencies installed in this app are: Chai, Mocha, Bcryptjs, Cors, Express, Mongoose, Nodemon and Supertest. Bcryptjs is used for login password authentication.
 
 ## Getting Started/Installation:
 
@@ -19,9 +19,11 @@ This application can be used by pulling it up on GitHub, forking it to your pers
 
 ## Contribution Guidelines:
 
-Contributors can open an issue on this repository https://github.com/pjl4/moviesBackend if you have suggestions to improve this application.
+Contributors can open an issue on this repository at https://github.com/pjl4/moviesBackend if there are suggestions to improve this application.
 
 ## Problems & Difficulties:
+
+It took significant effort to get some tests related to user ID and movie ID to pass in the backend.
 
 ## Future Additions:
 
@@ -30,3 +32,7 @@ In the future, we would like to add the feature of allowing a place for the user
 ## Planning & Wireframe:
 
 https://docs.google.com/document/d/1xQc0bYUmYEHy585N3KAJDiLbhBMxd7uSYZdrD6KwhAA/edit
+
+<img width="1208" alt="Screen Shot 2020-02-20 at 7 29 44 AM" src="https://user-images.githubusercontent.com/58324606/74949639-dfaa8580-53b2-11ea-9e95-f10adc9729cd.png">
+
+<img width="1284" alt="Screen Shot 2020-02-20 at 7 27 33 AM" src="https://user-images.githubusercontent.com/58324606/74949627-db7e6800-53b2-11ea-8c4a-6703982854d4.png">
