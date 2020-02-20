@@ -27,4 +27,6 @@ Contributors can open an issue on this repository https://github.com/pjl4/movies
 
 In the future, we would like to add the feature of allowing a place for the user to provide written feedback to the author of the film, as well as, post an image or illustration that reflects the synopsis of their proposed film.
 
-## Wireframe:
+## Planning & Wireframe:
+
+https://docs.google.com/document/d/1xQc0bYUmYEHy585N3KAJDiLbhBMxd7uSYZdrD6KwhAA/edit
