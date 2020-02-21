@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
 	const newMovie = req.body;
+	console.log(newMovie);
 	Movie.create(newMovie)
 		.then((movie) => res.json(movie))
 		.catch(console.error);
@@ -54,16 +55,17 @@ router.get('/:id', async (req, res) => {
 		{ new: true }
 	)
 		.then((movie) => {
-			User.findById(movie.createdBy).then((user) => {
-				const movieObj = {
-					userName: user.userName,
-					_id: user._id,
-					movie: movieRatings
-				};
-				res.json(movieObj);
-			});
+			User.findById(movie.createdBy)
+				.then((user) => {
+					const movieObj = {
+						userName: user.userName,
+						_id: user._id,
+						movie: movieRatings
+					};
+					res.json(movieObj);
+				})
+				.catch(console.error);
 		})
-
 		.catch(console.error);
 });
 router.put('/:id', (req, res) => {
