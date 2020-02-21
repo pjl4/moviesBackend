@@ -28,11 +28,9 @@ It took significant effort to get some tests related to user ID and movie ID to 
 
 ## Future Additions:
 
-In the future, we would like to add the feature of allowing a place for the user to provide written feedback to the author of the film, as well as, post an image or illustration that reflects the synopsis of their proposed film.
+In the future, we would like to add the feature of allowing a place for the user to provide written feedback to the author of the film, as well as, post an image or illustration that reflects the synopsis of the author's proposed film. Material posted on cinopsis will have copyrights attached to the login user who submitted the story and other legal protections.
 
 ## Planning & Wireframe:
-
-https://docs.google.com/document/d/1xQc0bYUmYEHy585N3KAJDiLbhBMxd7uSYZdrD6KwhAA/edit
 
 <img width="1208" alt="Screen Shot 2020-02-20 at 7 29 44 AM" src="https://user-images.githubusercontent.com/58324606/74949639-dfaa8580-53b2-11ea-9e95-f10adc9729cd.png">
 
